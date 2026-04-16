@@ -1,4 +1,4 @@
-# BTS Com' Edu - Guide d'installation locale
+# BTS Com - Guide d'installation locale
 
 Cette application est une **Single Page Application (SPA)** construite avec **React**, **Vite** et **Tailwind CSS**. Elle ne peut pas être ouverte simplement en double-cliquant sur le fichier `index.html`. Elle nécessite un environnement Node.js pour fonctionner.
 
