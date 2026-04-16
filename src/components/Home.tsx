@@ -11,9 +11,9 @@ interface HomeProps {
 export default function Home({ onNavigate }: HomeProps) {
   // Boutons principaux
   const buttons = [
+    { label: "Stratégie de com", id: "bloc1", icon: "📐", color: "bg-accent", textColor: "text-black" },
     { label: "Cultures de la Com", id: "culture", icon: "🎨", color: "bg-purple-500", textColor: "text-white" },
-    { label: "CEJM", id: "cejm", icon: "⚖️", color: "bg-blue-500", textColor: "text-white" },
-    { label: "Stratégie de com", id: "bloc1", icon: "📐", color: "bg-accent", textColor: "text-black" }
+    { label: "CEJM", id: "cejm", icon: "⚖️", color: "bg-blue-500", textColor: "text-white" }
   ];
 
   return (
