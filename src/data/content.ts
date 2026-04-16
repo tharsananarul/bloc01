@@ -1,0 +1,623 @@
+export interface ChapterContent {
+  id: string;
+  number: string;
+  title: string;
+  tag: string;
+  content: string | any[];
+}
+
+export interface Section {
+  id: string;
+  title: string;
+  badge?: string;
+  badgeColor?: 'blue' | 'green' | 'amber' | 'red' | 'purple' | 'teal';
+  description?: string;
+  content: any;
+}
+
+export interface Subject {
+  id: string;
+  title: string;
+  icon: string;
+  tag: string;
+  description: string;
+  sections: Section[];
+}
+
+export const CEJM_CHAPTERS: { annee1: ChapterContent[]; annee2: ChapterContent[] } = {
+  annee1: [
+    { id: 'ch1-1', number: '01', title: "L'intégration de l'entreprise dans son environnement", tag: 'Économie / Droit', content: 'Contenu de révision à venir...' },
+    { id: 'ch1-2', number: '02', title: "La régulation de l'activité économique", tag: 'Économie publique', content: 'Contenu de révision à venir...' },
+    { id: 'ch1-3', number: '03', title: "L'organisation de l'activité économique", tag: 'Droit des contrats', content: 'Contenu de révision à venir...' },
+    { id: 'ch1-4', number: '04', title: "L'impact du numérique sur l'entreprise", tag: 'Management / Stratégie', content: 'Contenu de révision à venir...' },
+    { id: 'ch1-5', number: '05', title: "Le choix d'une structure juridique", tag: 'Droit des sociétés', content: 'Contenu de révision à venir...' },
+    { id: 'ch1-6', number: '06', title: "Les relations contractuelles entre les acteurs", tag: 'Droit des contrats', content: 'Contenu de révision à venir...' },
+  ],
+  annee2: [
+    {
+      id: 'ch2-12',
+      number: '12',
+      title: "L'impact des mutations du travail sur l'emploi et les conditions de travail",
+      tag: 'RH / Management',
+      content: [
+        {
+          id: 'gepp',
+          title: "I. La gestion prévisionnelle et l'adaptation des ressources",
+          type: 'grid',
+          items: [
+            {
+              title: "1. La GEPP (Gestion des Emplois et des Parcours Professionnels)",
+              color: 'blue',
+              text: [
+                "La GEPP a pour vocation d'analyser les écarts entre les ressources humaines disponibles actuellement dans l'entreprise et les besoins futurs nécessaires à son développement. C'est un outil d'anticipation stratégique. En fonction de l'analyse réalisée, l'organisation met en place des actions appropriées :",
+                "• Si les besoins sont supérieurs aux ressources : L'organisation pourra envisager de recruter de nouveaux talents, de favoriser la promotion interne pour faire évoluer ses salariés, ou de les former pour qu'ils acquièrent les compétences manquantes.",
+                "• Si les ressources sont supérieures aux besoins : Il faudra envisager de réduire les effectifs, de proposer des mobilités internes (changer de poste ou de service) ou de réduire le temps de travail."
+              ]
+            },
+            {
+              title: "2. La gestion des talents",
+              color: 'purple',
+              text: [
+                "La gestion des talents vise à bénéficier d'un avantage compétitif en valorisant l'unicité et les compétences de chaque collaborateur. Cela permet à l'entreprise de gagner en souplesse et en réactivité face aux mutations du marché.",
+                "Cette démarche RH stratégique doit également permettre d'attirer, de détecter et de fidéliser les talents au sein de l'organisation."
+              ]
+            }
+          ]
+        },
+        {
+          id: 'motivation',
+          title: "II. Les leviers et théories de la motivation",
+          type: 'grid',
+          items: [
+            {
+              title: "1. Les leviers d'action de l'employeur",
+              color: 'green',
+              text: [
+                "Pour agir sur la motivation des salariés, l'employeur dispose d'un certain nombre de leviers très concrets :",
+                "• La rémunération (salaire fixe, primes, bonus).",
+                "• L'épargne salariale (intéressement, participation).",
+                "• La gestion des carrières (perspectives d'évolution, bilans de compétences).",
+                "• L'aménagement du temps de travail (horaires flexibles, temps partiel choisi).",
+                "• La stabilité de l'emploi (contrats en CDI, sécurité face au chômage)."
+              ]
+            },
+            {
+              title: "2. Les grandes théories de la motivation",
+              color: 'amber',
+              text: [
+                "• La pyramide d'Abraham Maslow : Il présente cinq besoins hiérarchisés que l'entreprise doit satisfaire pour motiver ses salariés. Ces besoins sont : le besoin physiologique (survie, salaire de base), le besoin de sécurité (stabilité, conditions de travail sûres), le besoin d'appartenance (intégration dans une équipe), le besoin d'estime ou de reconnaissance (respect, valorisation du travail), et le besoin d'épanouissement personnel (accomplissement, défis).",
+                "• La théorie bifactorielle de Frederick Herzberg : Il distingue deux types de facteurs distincts qui influencent la satisfaction au travail. D'une part, les facteurs d'hygiène, qui concernent l'environnement du travail (le salaire, les conditions de travail, la sécurité) ; leur absence crée de l'insatisfaction, mais leur présence ne motive pas durablement. D'autre part, les facteurs de motivation (ou moteurs), qui sont liés au travail en lui-même (l'intérêt de la mission, l'autonomie, la reconnaissance) et qui génèrent une véritable satisfaction."
+              ]
+            },
+            {
+              title: "3. Le cas des nouvelles générations : les Digital Natives",
+              color: 'teal',
+              text: [
+                "Les digital natives, également appelés « Millennials », sont les collaborateurs nés dans un environnement digitalisé. Leurs attentes diffèrent des générations précédentes : ils souhaitent travailler dans un environnement qui favorise les échanges et le développement individuel.",
+                "Pour répondre à leurs attentes, les entreprises doivent s'adapter en proposant des modes de travail collaboratifs, le recours au télétravail et la mise en place d'un management participatif (où le salarié est impliqué dans les décisions)."
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      id: 'ch2-13',
+      number: '13',
+      title: "La démarche et le diagnostic stratégiques",
+      tag: 'Stratégie',
+      content: [
+        {
+          id: 'demarche',
+          title: "I. La démarche stratégique globale",
+          type: 'grid',
+          items: [
+            {
+              title: "1. Le Modèle LCAG",
+              color: 'blue',
+              text: [
+                "Développé dans les années 1960 par quatre professeurs de la Harvard Business School (Learned, Christensen, Andrews et Guth), le modèle LCAG propose une démarche stratégique en plusieurs étapes afin de déterminer les choix stratégiques d'une entreprise. Les étapes fondamentales sont :",
+                "• La réalisation du diagnostic stratégique.",
+                "• La fixation des objectifs stratégiques.",
+                "• La détermination de choix stratégiques pour atteindre ces objectifs.",
+                "Ce double diagnostic stratégique s'effectue au moyen d'un outil d'aide à la décision matriciel, appelé « FFOM » (Forces / Faiblesses, Menaces / Opportunités) ou « SWOT » (Strengths / Weaknesses, Opportunities / Threats). Il s'appuie sur :",
+                "• Un diagnostic stratégique externe : analyse des menaces et des opportunités présentes dans l'environnement général et concurrentiel.",
+                "• Un diagnostic stratégique interne : identification des forces et des faiblesses propres de l'entreprise."
+              ]
+            },
+            {
+              title: "2. Stratégie délibérée vs Stratégie émergente (Henry Mintzberg)",
+              color: 'teal',
+              text: [
+                "Selon Henry Mintzberg, la démarche stratégique n'est pas linéaire et subit en permanence les perturbations de l'environnement. Il distingue donc :",
+                "• La stratégie délibérée : C'est celle qui est voulue dès le départ par la direction et planifiée pour plusieurs années.",
+                "• La stratégie émergente : Elle ne l'est pas ; elle surgit au cours du temps en fonction des aléas de l'environnement et des imprévus."
+              ]
+            }
+          ]
+        },
+        {
+          id: 'diag-externe',
+          title: "II. Le diagnostic stratégique externe",
+          type: 'grid',
+          items: [
+            {
+              title: "1. Le Macro-environnement (Outil PESTEL)",
+              color: 'amber',
+              text: [
+                "Il s'agit d'étudier l'environnement dans lequel l'entreprise évolue pour y déceler les éléments favorables (opportunités) et nuisibles (menaces). L'environnement global (ou macro-environnement) est l'ensemble des éléments externes qui peuvent influencer l'activité de l'entreprise et sur lesquels elle a généralement peu d'influence. Il englobe les caractéristiques générales de l'économie et de la société.",
+                "Ce diagnostic peut être réalisé à l'aide de l'outil PESTEL, qui prend en compte six dimensions factuelles : Politique, Économique, Socioculturel, Technologique, Écologique et Légal."
+              ]
+            },
+            {
+              title: "2. Le Micro-environnement (Les 5 forces de Porter)",
+              color: 'red',
+              text: [
+                "Pour apprécier les forces concurrentielles en présence sur un marché donné (l'environnement proche de l'entreprise), on utilise le modèle des cinq forces concurrentielles proposé par Michael Porter. Ces forces qui exercent une pression sont :",
+                "• Les concurrents directs : Déjà en place, ils sont rivaux car ils proposent des produits identiques.",
+                "• Les concurrents potentiels (nouveaux entrants) : Ils pourraient entrer sur le marché s'il n'est pas protégé et venir concurrencer les entreprises en place (la protection se fait par l'innovation, des coûts d'installation importants, des brevets ou une autorisation de mise sur le marché).",
+                "• Les concurrents indirects (produits de substitution) : Ils proposent des produits différents en apparence, mais qui répondent à un besoin des consommateurs identique.",
+                "• Les fournisseurs : Ils peuvent détenir un pouvoir de négociation important sur l'entreprise s'ils sont puissants, concentrés et incontournables.",
+                "• Les clients : Ils peuvent détenir un pouvoir de négociation important sur l'entreprise s'ils sont puissants et organisés, pesant ainsi sur les prix ou la qualité."
+              ]
+            },
+            {
+              title: "3. Les Facteurs Clés de Succès (FCS)",
+              color: 'purple',
+              text: [
+                "Le diagnostic externe permet de repérer les facteurs clés de succès (FCS) à maîtriser impérativement sur un marché. Un FCS est un élément essentiel qui garantit le succès d'une entreprise dans un domaine donné.",
+                "Il peut s'agir d'une qualité comme l'agilité, d'une caractéristique du produit comme le prix, l'image ou les fonctionnalités, d'une compétence comme un savoir-faire technologique, ou d'une relation avec des tiers comme la fidélisation client.",
+                "Il doit répondre spécifiquement aux besoins du marché tout en constituant une ressource ou une force exploitable par l'entreprise."
+              ]
+            }
+          ]
+        },
+        {
+          id: 'diag-interne',
+          title: "III. Le diagnostic stratégique interne",
+          type: 'grid',
+          items: [
+            {
+              title: "1. La théorie des ressources (Edith Penrose, 1959)",
+              color: 'green',
+              text: [
+                "Il évalue la capacité intrinsèque de l'entreprise à affronter son marché. La théorie définit la firme comme un ensemble de ressources dont le succès résulte de sa capacité à mobiliser et exploiter des ressources clés ou spécifiques, c'est-à-dire celles qui vont créer de la valeur et qui sont rares. Les ressources détenues peuvent être de différentes natures :",
+                "• Tangibles : Ressources matérielles, financières, humaines et physiques.",
+                "• Intangibles : Ressources immatérielles comme les capacités organisationnelles, technologiques et réputationnelles (image de marque)."
+              ]
+            },
+            {
+              title: "2. La théorie des compétences (Gary Hamel et C.K. Prahalad, 1993)",
+              color: 'blue',
+              text: [
+                "Une compétence correspond à ce que sait faire l'entreprise avec ses ressources ; c'est la manière de les combiner qui va leur donner de la valeur.",
+                "Les compétences deviennent fondamentales ou distinctives si elles permettent à l'entreprise de se différencier de façon stratégique de ses concurrents.",
+                "Elles contribuent à un avantage concurrentiel durable en permettant de gagner en qualité, flexibilité et rapidité d'exécution grâce à une expertise, en facilitant l'accès à un grand nombre de marchés via le management des marques ou la distribution, ou en distinguant le produit par son caractère unique et innovant."
+              ]
+            },
+            {
+              title: "3. La chaîne de valeur (Michael Porter, 1985)",
+              color: 'amber',
+              text: [
+                "Cet outil représente l'entreprise comme un enchaînement d'activités, en distinguant les activités principales (qui touchent directement au produit : logistique, production, vente) des activités de soutien (qui viennent en appui : RH, achats, infrastructures).",
+                "• Le but : Repérer les activités qui génèrent le plus de valeur pour le client final, et identifier celles qui ne créent pas de valeur et génèrent uniquement des coûts.",
+                "• La décision : Il s'agit alors de se concentrer sur les activités génératrices de valeur, tandis que pour les secondes, se pose la question stratégique de les conserver en interne ou de les externaliser (sous-traiter).",
+                "Les activités et les liens entre ces activités qui génèrent le plus de valeur vont constituer l'avantage concurrentiel de l'entreprise, sa source de différenciation par rapport à la concurrence."
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+};
+
+export const SUBJECTS: Subject[] = [
+  {
+    id: 'bloc1',
+    title: 'Stratégie de communication',
+    icon: '📐',
+    tag: 'Bloc 01',
+    description: "Les 8 étapes clés du plan de com, de l'analyse au pilotage.",
+    sections: [
+      {
+        id: 'diagnostic',
+        title: '1. Diagnostic',
+        badge: 'SWOT / FFOM',
+        badgeColor: 'blue',
+        description: "Analyse Interne (Forces/Faiblesses) et Externe (Opportunités/Menaces).",
+        content: {
+          type: 'swot',
+          items: [
+            { title: 'Forces (interne)', color: 'green', items: ['Atouts, savoir-faire distinctifs', 'Notoriété, label, budget fort', 'Image de marque positive'], example: 'Ex. Reels très vus, comm. organique performante' },
+            { title: 'Faiblesses (interne)', color: 'red', items: ['Points faibles internes', 'Site obsolète, budget nul', 'Image vieillissante'], example: 'Ex. Ventes en ligne = 5%, pas de stratégie omnicanale' },
+            { title: 'Opportunités (externe)', color: 'blue', items: ['Tendances favorables du marché', 'Croissance du e-commerce', 'Nouveaux besoins des cibles'], example: 'Ex. Essor de Pinterest/Instagram' },
+            { title: 'Menaces (externe)', color: 'amber', items: ['Concurrents agressifs', 'Crise économique, inflation', 'Saturation médiatique'], example: 'Ex. Concurrence internationale à bas coût' }
+          ],
+          warning: "Ne faire que Forces/Faiblesses = diagnostic interne seulement = max 6 pts sur 10. Le SWOT complet est obligatoire."
+        }
+      },
+      {
+        id: 'probleme',
+        title: '2. Problème',
+        description: "Le défi que la campagne doit résoudre. Tension entre ambition et obstacle.",
+        content: {
+          type: 'formula',
+          formula: "« Comment [objectif / ambition] alors que [obstacle / frein / préjugé] ? »",
+          examples: [
+            { label: 'Exemple 1 — Formation artisanale', text: "« Comment informer et inciter des jeunes à intégrer un centre de formation artisanal, alors que l'artisanat est perçu comme peu attractif et peu lucratif ? »" },
+            { label: 'Exemple 2 — Culture / Spectacle', text: "« Comment attirer les jeunes vers l'opéra, alors que cette musique est perçue comme élitiste et chère ? »" },
+            { label: 'Exemple 3 — Marque locale', text: "« Comment développer les ventes en ligne d'une marque artisanale locale, alors que sa cible privilégie encore l'achat en magasin ? »" }
+          ],
+          tip: "Le 'comment' = ton objectif. Le 'alors que' = le frein principal tiré du SWOT."
+        }
+      },
+      {
+        id: 'positionnement',
+        title: '3. Positionnement',
+        badge: '4 critères',
+        badgeColor: 'blue',
+        description: "La place que la marque veut occuper dans l'esprit du public.",
+        content: {
+          type: 'grid',
+          items: [
+            { title: 'Crédible', color: 'blue', text: 'La promesse est réaliste et prouvée (Labels, prix, ancienneté).' },
+            { title: 'Distinctif', color: 'green', text: "L'offre se démarque clairement des concurrents (Avantage unique)." },
+            { title: 'Attractif', color: 'amber', text: 'Répond à un vrai besoin ou attente forte de la cible.' },
+            { title: 'Durable', color: 'red', text: 'Peut être maintenu et défendu sur le long terme.' }
+          ],
+          formula: "« [La marque] se positionne comme [image souhaitée] pour [cible], grâce à [preuve / différenciation]. »"
+        }
+      },
+      {
+        id: 'objectifs',
+        title: '4. Objectifs',
+        badge: 'Triptyque CAC',
+        badgeColor: 'purple',
+        content: {
+          type: 'grid',
+          items: [
+            { title: '🧠 Cognitif', color: 'blue', text: 'FAIRE CONNAÎTRE : Informer, annoncer, développer la notoriété.' },
+            { title: '❤️ Affectif', color: 'green', text: 'FAIRE AIMER : Améliorer l\'image, moderniser, créer la préférence.' },
+            { title: '⚡ Conatif', color: 'amber', text: 'FAIRE AGIR : Pousser à l\'achat, générer des inscriptions ou du trafic.' }
+          ],
+          example: "Cognitif : Faire connaître le centre. Affectif : Valoriser l'image. Conatif : Inciter à l'inscription."
+        }
+      },
+      {
+        id: 'cibles',
+        title: '5. Cibles',
+        content: {
+          type: 'table',
+          headers: ['Type', 'Définition', 'Exemple'],
+          rows: [
+            ['Cible principale', 'Public global visé.', 'Jeunes 16-25 ans national.'],
+            ['Cœur de cible', 'Fraction prioritaire.', 'Jeunes 16-25 ans régionaux.'],
+            ['Cible secondaire', 'Public influent.', 'Parents, enseignants.'],
+            ['Relais', 'Prescripteurs.', 'Journalistes, influenceurs.'],
+            ['Interne', 'Collaborateurs.', 'Équipes, formateurs.']
+          ],
+          extra: {
+            title: "Motivations & Freins",
+            items: [
+              { label: 'Motivations', color: 'green', list: ['Sens dans la carrière', 'Attrait local', 'Formation pratique'] },
+              { label: 'Freins', color: 'red', list: ['Image dépassée', 'Méconnaissance débouchés', 'Peur revenus'] }
+            ]
+          }
+        }
+      },
+      {
+        id: 'moyens',
+        title: '6. Moyens',
+        badge: 'POE',
+        badgeColor: 'amber',
+        content: {
+          type: 'grid',
+          items: [
+            { title: '📺 Médias', color: 'blue', text: 'Affichage, Presse, Radio, TV, Internet, Réseaux Sociaux.' },
+            { title: '🎯 Hors-médias', color: 'green', text: 'Édition, Marketing direct, Événementiel, RP, Influence.' },
+            { title: '💰 Paid', color: 'red', text: 'Ads, Influence rémunérée, Achat d\'espace.' },
+            { title: '🏠 Owned', color: 'blue', text: 'Site, Blog, Réseaux (organique), Newsletter.' },
+            { title: '🌱 Earned', color: 'green', text: 'Retombées presse, Bouche à oreille, Partages.' }
+          ]
+        }
+      },
+      {
+        id: 'kpi',
+        title: '7. KPI',
+        content: {
+          type: 'table',
+          headers: ['Objectif', 'Indicateurs (KPI)'],
+          rows: [
+            ['Cognitif', 'Impressions, Visiteurs uniques, SEO, Notoriété.'],
+            ['Affectif', 'Taux engagement, Followers, NPS, Sentiment.'],
+            ['Conatif', 'Taux conversion, Panier moyen, CPA, CTR, CA.'],
+            ['Physique', 'Taux de visite tracé (QR code), Entrées.'],
+            ['RP', 'Nombre retombées, Audience cumulée, EAP.']
+          ]
+        }
+      },
+      {
+        id: 'droit',
+        title: '8. Droit',
+        content: {
+          type: 'list',
+          items: [
+            { title: 'RGPD (2018)', text: 'Consentement explicite, droit à l\'oubli, politique de confidentialité.' },
+            { title: 'Loi Évin (1991)', text: 'Encadrement alcool (message sanitaire) et tabac (interdiction).' },
+            { title: 'Loi Sapin (1993)', text: 'Transparence des achats d\'espaces publicitaires.' },
+            { title: 'LCEN (2004)', text: 'Opt-in e-mailing, mentions légales, cookies.' },
+            { title: 'Droit d\'auteur', text: 'Cession de droits obligatoire pour toute création originale.' },
+            { title: 'Droit à l\'image', text: 'Autorisation écrite obligatoire pour toute personne identifiable.' },
+            { title: 'Loi AGEC (2020)', text: 'Anti-gaspillage, éco-conception des supports.' }
+          ]
+        }
+      },
+      {
+        id: 'recap',
+        title: '✅ Récapitulatif',
+        content: {
+          type: 'table',
+          headers: ['Étape', 'Question clé', 'Piège'],
+          rows: [
+            ['SWOT', 'Où en est-on ?', 'Oublier l\'externe.'],
+            ['Problème', 'Défi à résoudre ?', 'Oublier le "Alors que".'],
+            ['Positionnement', 'Image voulue ?', 'Oublier les 4 critères.'],
+            ['Objectifs', 'Quoi obtenir ?', 'Oublier un des 3 niveaux.'],
+            ['Cibles', 'À qui parler ?', 'Oublier les relais.'],
+            ['Moyens', 'Quels canaux ?', 'Lister sans justifier.'],
+            ['KPI', 'Comment mesurer ?', 'Déconnectés des moyens.']
+          ]
+        }
+      }
+    ]
+  },
+  {
+    id: 'culture',
+    title: 'Cultures de la Com',
+    icon: '🎨',
+    tag: 'Cultures',
+    description: "Analyse des thèmes transversaux : La Rue, Le Repas, L'Excès.",
+    sections: [
+      {
+        id: 'la-rue',
+        title: "La Rue",
+        badge: 'Séance 1',
+        badgeColor: 'blue',
+        content: {
+          type: 'construction',
+          text: 'Contenu en cours de construction — Bientôt disponible.'
+        }
+      },
+      {
+        id: 'le-repas',
+        title: "Le Repas",
+        badge: 'Séance 2',
+        badgeColor: 'amber',
+        content: {
+          type: 'construction',
+          text: 'Contenu en cours de construction — Bientôt disponible.'
+        }
+      },
+      {
+        id: 'exces',
+        title: "L'Excès",
+        badge: 'Séance 3',
+        badgeColor: 'purple',
+        content: {
+          type: 'exces-full',
+          subsections: [
+            {
+              id: 'philo',
+              title: "I. L'Excès face à la Modération",
+              type: 'grid',
+              items: [
+                {
+                  title: 'Épicure (341-270 av. J.-C.)',
+                  color: 'purple',
+                  text: [
+                    'Le bonheur = satisfaction des désirs naturels et nécessaires (manger, dormir, amitié).',
+                    'La comm. crée des désirs artificiels (luxe, accumulation) qui mènent à la frustration.',
+                    'La modération est la clé de la vie heureuse.',
+                    "-> L'hyperconsommation promue par la pub est épicuriennement nuisible."
+                  ]
+                },
+                {
+                  title: "L'éthique en communication",
+                  color: 'green',
+                  text: [
+                    'Recherche du juste, du beau et du vrai dans les discours.',
+                    'Une communication éthique valorise la modération et la sollicitude.',
+                    "Elle s'éloigne des discours démagogiques et manipulatoires.",
+                    '-> Le but est de créer une vraie relation de confiance avec la cible.'
+                  ]
+                },
+                {
+                  title: "La Sagesse et l'Architecture",
+                  color: 'blue',
+                  text: [
+                    "L'architecture religieuse magistrale sert à imposer le respect de la croyance par l'excès.",
+                    'Ex. : La Chapelle Sixtine de Michel-Ange, ou la Sagrada Familia.',
+                    '-> La démesure est utilisée comme outil de conviction.'
+                  ]
+                },
+                {
+                  title: 'Le paradoxe publicitaire',
+                  color: 'amber',
+                  text: [
+                    "Les annonceurs utilisent l'excès formel (visuel choc, hyperbole) pour vanter un mode de vie équilibré.",
+                    "Il n'y a pas de contradiction entre recourir à l'excès et prôner la modération.",
+                    "Ex. L'excès est un moyen d'appuyer le discours, mais la finalité du message reste saine."
+                  ]
+                }
+              ]
+            },
+            {
+              id: 'pourquoi',
+              title: "II. Pourquoi les marques ont-elles recours à l'excès ?",
+              type: 'grid',
+              items: [
+                {
+                  title: "Capter l'attention",
+                  color: 'red',
+                  text: [
+                    "Économie de l'attention : chaque marque se bat pour exister dans un espace saturé.",
+                    "L'excès permet de créer une rupture visuelle ou cognitive."
+                  ]
+                },
+                {
+                  title: 'Figures de style',
+                  color: 'blue',
+                  text: [
+                    'Les communicateurs utilisent des procédés rhétoriques : amplification, exagération, hyperbole, répétition.',
+                    'Le but est de marquer les esprits par une expressivité accrue.'
+                  ]
+                },
+                {
+                  title: 'Faire rêver',
+                  color: 'amber',
+                  text: [
+                    'La mise en scène de la démesure (dorures, environnements grandioses).',
+                    "Marques de luxe : utiliser l'excès pour créer l'illusion et rapprocher le produit du divin."
+                  ]
+                }
+              ]
+            },
+            {
+              id: 'campagnes',
+              title: 'III. Campagnes de com emblématiques',
+              type: 'cases',
+              items: [
+                {
+                  brand: "DIOR × RIHANNA (J'ADORE) — 2024",
+                  title: "L'excès divin et l'esthétique de l'or",
+                  body: [
+                    "1. La mise en scène historique : Le produit est mis en scène dans un environnement historique magistral (le château de Versailles). Le montage alterne des gros plans (sur les vêtements et accessoires), des travellings, des plans moyens montrant Rihanna, et des plans généraux sur le somptueux décor.",
+                    "2. Le symbolisme des couleurs : Le spot est dominé par des couleurs chaudes et dorées, en lien direct avec la paronomase (Dior / J'adore / Or). Il crée une analogie entre le parfum et l'or (le parfum est littéralement montré dans un coffre-fort).",
+                    "3. Rêve, illusion et sacré : La campagne établit un rapprochement fort entre le rêve et l'illusion. On y trouve une référence au Christ avec la scène de l'eau, puis l'apparition de Rihanna dans un encadrement illuminé. C'est une véritable apparition divine, traitée de manière sculpturale."
+                  ],
+                  tags: ['Luxe', 'Hyperbole visuelle', 'Références divines', "L'or"],
+                  color: 'purple'
+                },
+                {
+                  brand: 'JUST EAT — 2018 / 2019',
+                  title: 'Le décalage temporel et la promesse absurde',
+                  body: [
+                    "La publicité joue sur un contraste temporel très fort : le spot se déroule à une époque ancienne, mais promet un service de livraison ultra-rapide en 2 secondes.",
+                    "Cette promesse est délibérément absurde et trop exagérée. L'hyperbole temporelle ne cherche pas à être crédible de manière littérale, mais à marquer les esprits par l'humour absurde pour souligner la véritable force du service : sa rapidité."
+                  ],
+                  tags: ['Hyperbole', 'Humour absurde', 'Promesse exagérée', 'Mémorisation'],
+                  color: 'amber'
+                },
+                {
+                  brand: 'AGENCE BABEL ("FULLWASHING") — AVRIL 2021',
+                  title: "La parodie pour dénoncer l'excès de mensonges",
+                  body: [
+                    "L'Agence Babel parodie les annonceurs qui mentent sur leurs images (via le greenwashing, pinkwashing, ou womanwashing).",
+                    "Dans ce spot vidéo, ils inventent la fausse lessive \"Fullwashing\", présentée comme \"le premier discours de marque qui lave tout en 1\". C'est une campagne parodique (à visée humoristique et dénonciatrice) qui pointe du doigt les discours démagogiques des annonceurs. L'agence encourage ainsi une consommation et une communication responsables et mesurées."
+                  ],
+                  tags: ['Parodie', 'Dénonciation', 'Washing', 'Humour'],
+                  color: 'teal'
+                },
+                {
+                  brand: 'INTERFEL / FRUITS & LÉGUMES FRAIS — "JAMAIS TROP" (JUIN 2015 / AVRIL 2025)',
+                  title: "Valoriser l'excès pour promouvoir la nature",
+                  body: [
+                    "La campagne utilise des images en accéléré qui produisent un effet d'accélération du temps. La succession extrêmement rapide de gros plans avec des mouvements de caméra rapides (travelling, panoramiques) crée un effet immersif et de vitesse.",
+                    "La musique choisie est \"Just can't get enough\" de Depeche Mode, ce qui fait directement écho au slogan \"Jamais trop\". La campagne présente une esthétique très chargée et excentrique (décors, costumes et accessoires colorés façon années 70). La succession de séquences se conclut par la répétition du slogan, créant un effet cumulatif. L'excès formel est utilisé pour prouver qu'avec un produit sain, l'excès est positif."
+                  ],
+                  tags: ['Contre-pied', 'Répétition / Accumulation', 'Vitesse', 'Excès positif'],
+                  color: 'green'
+                }
+              ]
+            },
+            {
+              id: 'cas',
+              title: "IV. Études de cas (Les types d'excès)",
+              type: 'list',
+              items: [
+                {
+                  title: '1. Le Shockvertising — Choquer pour alerter',
+                  text: [
+                    "Utiliser un choc émotionnel (image violente, injure) pour forcer une prise de conscience, souvent en prévention sanitaire ou routière.",
+                    "Campagne étudiée : Ligue contre le Cancer (\"Va chier\")",
+                    "Recours direct à l'injure au sens propre. L'impératif sert à exprimer un ordre, un conseil, voire une prière. C'est une manière de dépasser le tabou (le cancer colorectal, les toilettes) pour donner au dépistage un caractère plus sérieux et provoquer une réaction."
+                  ]
+                },
+                {
+                  title: '2. La Transgression — Repousser les limites',
+                  text: [
+                    "L'excès peut passer par des thématiques transgressives (l'intimité, le scatologique) pour paraître crédible et extraordinaire.",
+                    "Référence étudiée : Gargantua de Rabelais",
+                    "Dans Gargantua, les personnages sont des géants, ce qui permet un effet grossissant permanent. Rabelais utilise des sujets transgressifs et scatologiques, et l'onomastique (le jeu sur les noms comme Grandgousier) programme les appétits excessifs. Ce gigantisme et cet extra-ordinaire renforcent paradoxalement le côté crédible du récit."
+                  ]
+                },
+                {
+                  title: "3. La Parodie — Dénoncer par l'exagération",
+                  text: [
+                    "La parodie est une façon d'exagérer les traits et les défauts de manière excessive pour imiter une œuvre ou un comportement. Elle a une visée humoristique et comparative (dénonciation de l'hypocrisie des marques, comme dans la campagne Wero ou Agence Babel)."
+                  ]
+                }
+              ]
+            },
+            {
+              id: 'risques',
+              title: "V. Risques et limites de l'excès",
+              type: 'grid',
+              items: [
+                {
+                  title: 'Tension et Malaise',
+                  color: 'red',
+                  text: [
+                    "Un recours trop fort à l'excès peut créer une véritable tension et faire peur.",
+                    "Il peut être associé à l'idée de débauche ou de surconsommation.",
+                    "L'outrance peut être poussée jusqu'au dégoût (limite du shockvertising)."
+                  ]
+                },
+                {
+                  title: 'Questionnement moral',
+                  color: 'amber',
+                  text: [
+                    "L'excès ne va pas forcément de pair avec la frugalité, l'équilibre et la mesure, pourtant attendus par les aspirations actuelles de la société.",
+                    "Pour Montaigne, la vertu lorsqu'elle est appliquée avec excès se trouve corrompue et dénaturée."
+                  ]
+                },
+                {
+                  title: 'Le mauvais goût',
+                  color: 'purple',
+                  text: [
+                    "Jusqu'où peut-on aller ? L'excès pose la question de la frontière entre le bon goût et le grotesque.",
+                    "Le luxe ostentatoire des \"nouveaux riches\" (ex. Gatsby le Magnifique) montre que l'excès n'est pas forcément du côté du raffinement."
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    id: 'cejm',
+    title: 'CEJM',
+    icon: '⚖️',
+    tag: 'Droit & Éco',
+    description: "Culture Économique, Juridique et Managériale.",
+    sections: [
+      {
+        id: 'annee1',
+        title: '1ère Année',
+        badge: 'L1',
+        badgeColor: 'teal',
+        content: { type: 'cejm-chapters', year: 'annee1' }
+      },
+      {
+        id: 'annee2',
+        title: '2ème Année',
+        badge: 'L2',
+        badgeColor: 'blue',
+        content: { type: 'cejm-chapters', year: 'annee2' }
+      }
+    ]
+  }
+];

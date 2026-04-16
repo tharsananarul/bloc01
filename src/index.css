@@ -1,0 +1,63 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-display: "Inter", sans-serif;
+  
+  --color-bg-page: #050505;
+  --color-bg-card: #141414;
+  --color-accent: #E6FF00;
+  --color-border-theme: #262626;
+  --color-muted: #888888;
+}
+
+@layer base {
+  body {
+    @apply bg-bg-page text-white font-sans antialiased;
+    -webkit-tap-highlight-color: transparent;
+    overflow-x: hidden;
+  }
+  
+  h1, h2, h3, h4 {
+    @apply font-display font-black tracking-tighter uppercase;
+  }
+}
+
+.brutalist-border {
+  @apply border border-border-theme;
+}
+
+.accent-border-left {
+  @apply border-l-4 border-accent;
+}
+
+/* Hide scrollbar for tab overflow */
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 4px;
+}
+::-webkit-scrollbar-track {
+  @apply bg-bg-page;
+}
+::-webkit-scrollbar-thumb {
+  @apply bg-border-theme hover:bg-muted;
+}
+
+/* Smooth pulse animation */
+@keyframes pulse-soft {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.5; }
+}
+
+.animate-pulse-soft {
+  animation: pulse-soft 2s ease-in-out infinite;
+}
