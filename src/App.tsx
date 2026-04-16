@@ -106,8 +106,16 @@ export default function App() {
   const renderSwot = (content: any) => (
     <div className="space-y-6">
       <div className="grid grid-cols-1 md:grid-cols-2 gap-px bg-border-theme border border-border-theme">
-        {content.items.map((item: any) => (
-          <div key={item.title} className="p-5 md:p-6 bg-bg-page group">
+        {content.items.map((item: any, i: number) => (
+          <motion.div 
+            key={item.title} 
+            initial={{ opacity: 0, y: 15 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, margin: "-20px" }}
+            transition={{ delay: i * 0.05, duration: 0.4 }}
+            whileHover={{ y: -2 }}
+            className="p-5 md:p-6 bg-bg-page group transition-colors"
+          >
             <h4 className={cn(
               "text-xs md:text-sm font-black mb-4 flex items-center gap-2",
               item.color === 'green' && "text-emerald-400",
@@ -126,14 +134,19 @@ export default function App() {
             <p className="text-[9px] md:text-[10px] uppercase font-bold text-muted/50 tracking-widest">
               {item.example}
             </p>
-          </div>
+          </motion.div>
         ))}
       </div>
       {content.warning && (
-        <div className="p-4 bg-rose-500/10 border border-rose-500/20 flex gap-3">
+        <motion.div 
+          initial={{ opacity: 0, scale: 0.95 }}
+          whileInView={{ opacity: 1, scale: 1 }}
+          viewport={{ once: true }}
+          className="p-4 bg-rose-500/10 border border-rose-500/20 flex gap-3"
+        >
           <AlertCircle className="text-rose-500 flex-shrink-0" size={16} />
           <p className="text-[10px] md:text-xs text-rose-200 font-bold italic">{content.warning}</p>
-        </div>
+        </motion.div>
       )}
     </div>
   );
@@ -219,9 +232,16 @@ export default function App() {
 
   const renderGrid = (content: any) => (
     <div className="space-y-6">
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-px bg-border-theme border border-border-theme">
-        {content.items.map((item: any) => (
-          <div key={item.title} className="p-5 md:p-6 bg-bg-page hover:bg-bg-card transition-colors">
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-px bg-border-theme border border-border-theme overflow-hidden">
+        {content.items.map((item: any, i: number) => (
+          <motion.div 
+            key={item.title} 
+            initial={{ opacity: 0, scale: 0.98 }}
+            whileInView={{ opacity: 1, scale: 1 }}
+            viewport={{ once: true, margin: "-20px" }}
+            transition={{ delay: i * 0.05, duration: 0.4 }}
+            className="p-5 md:p-6 bg-bg-page hover:bg-bg-card transition-colors"
+          >
             <h4 className={cn(
               "text-xs md:text-sm font-black mb-3",
               item.color === 'blue' && "text-blue-400",
@@ -244,14 +264,19 @@ export default function App() {
                 <p className="text-[11px] md:text-xs text-muted font-medium">{item.text}</p>
               )}
             </div>
-          </div>
+          </motion.div>
         ))}
       </div>
       {content.formula && (
-        <div className="p-6 bg-bg-page border-l-4 border-accent">
+        <motion.div 
+          initial={{ opacity: 0, x: -20 }}
+          whileInView={{ opacity: 1, x: 0 }}
+          viewport={{ once: true }}
+          className="p-6 bg-bg-page border-l-4 border-accent shadow-sm"
+        >
           <p className="text-[9px] md:text-[10px] text-accent font-black uppercase tracking-widest mb-2">Formule de rédaction</p>
           <p className="text-xs md:text-sm font-black italic">"{content.formula}"</p>
-        </div>
+        </motion.div>
       )}
       {content.example && (
         <div className="p-4 bg-accent/5 border border-border-theme">
@@ -263,9 +288,16 @@ export default function App() {
 
   const renderList = (content: any) => (
     <div className="grid gap-px bg-border-theme border border-border-theme">
-      {content.items.map((item: any) => (
-        <div key={item.title} className="p-5 md:p-6 bg-bg-page flex items-start gap-4 group hover:bg-bg-card transition-colors">
-          <div className="w-1 h-1 bg-accent mt-2 flex-shrink-0" />
+      {content.items.map((item: any, i: number) => (
+        <motion.div 
+          key={item.title} 
+          initial={{ opacity: 0, y: 15 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ delay: i * 0.05, duration: 0.3 }}
+          className="p-5 md:p-6 bg-bg-page flex items-start gap-4 group hover:bg-bg-card transition-colors"
+        >
+          <div className="w-1 h-1 bg-accent mt-2 flex-shrink-0 group-hover:scale-150 transition-transform" />
           <div className="flex-1">
             <h4 className="text-xs md:text-sm font-black mb-3">{item.title}</h4>
             <div className="space-y-3">
@@ -280,7 +312,7 @@ export default function App() {
               )}
             </div>
           </div>
-        </div>
+        </motion.div>
       ))}
     </div>
   );
@@ -505,13 +537,22 @@ export default function App() {
         {/* Desktop Nav */}
         <nav className="hidden lg:block">
           <ul className="flex items-center gap-6 text-[10px] uppercase tracking-[2px] font-bold">
+            <li
+              onClick={handleGoHome}
+              className={cn(
+                "cursor-pointer transition-colors duration-300 py-1",
+                isHome ? "text-accent border-b-2 border-accent" : "text-muted hover:text-white"
+              )}
+            >
+              Accueil
+            </li>
             {SUBJECTS.map((s) => (
               <li
                 key={s.id}
                 onClick={() => handleSubjectChange(s)}
                 className={cn(
                   "cursor-pointer transition-colors duration-300 py-1",
-                  activeSubject.id === s.id
+                  !isHome && activeSubject.id === s.id
                     ? "text-accent border-b-2 border-accent"
                     : "text-muted hover:text-white"
                 )}
@@ -542,16 +583,31 @@ export default function App() {
             className="fixed inset-0 z-40 lg:hidden bg-bg-page/98 backdrop-blur-sm pt-20 px-6"
           >
             <div className="flex flex-col gap-1 mt-4">
+              {/* Ajout Accueil Mobile */}
+              <motion.button
+                initial={{ opacity: 0, x: -20 }}
+                animate={{ opacity: 1, x: 0 }}
+                onClick={() => { handleGoHome(); setIsMobileMenuOpen(false); }}
+                className={cn(
+                  "w-full p-5 text-left text-lg font-black uppercase tracking-tighter border-b border-border-theme flex items-center justify-between",
+                  isHome ? "text-accent" : "text-white"
+                )}
+              >
+                <span>Accueil</span>
+                <span className="text-[10px] tracking-widest text-muted font-bold">Menu Principal</span>
+              </motion.button>
+              
+              {/* Le reste des sujets */}
               {SUBJECTS.map((s, i) => (
                 <motion.button
                   key={s.id}
                   initial={{ opacity: 0, x: -20 }}
                   animate={{ opacity: 1, x: 0 }}
-                  transition={{ delay: i * 0.08 }}
+                  transition={{ delay: (i + 1) * 0.08 }}
                   onClick={() => handleSubjectChange(s)}
                   className={cn(
                     "w-full p-5 text-left text-lg font-black uppercase tracking-tighter border-b border-border-theme flex items-center justify-between",
-                    activeSubject.id === s.id ? "text-accent" : "text-white"
+                    (!isHome && activeSubject.id === s.id) ? "text-accent" : "text-white"
                   )}
                 >
                   <span>{s.title}</span>
