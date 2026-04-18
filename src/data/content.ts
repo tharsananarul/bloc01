@@ -392,7 +392,7 @@ export const SUBJECTS: Subject[] = [
         badgeColor: 'blue',
         content: {
           type: 'construction',
-          text: 'Contenu en cours de construction — Bientôt disponible.'
+          text: '(Contenu restreint à la demande de l\'enseignante)'
         }
       },
       {
@@ -402,7 +402,7 @@ export const SUBJECTS: Subject[] = [
         badgeColor: 'amber',
         content: {
           type: 'construction',
-          text: 'Contenu en cours de construction — Bientôt disponible.'
+          text: '(Contenu restreint à la demande de l\'enseignante)'
         }
       },
       {
@@ -411,190 +411,24 @@ export const SUBJECTS: Subject[] = [
         badge: 'Séance 3',
         badgeColor: 'purple',
         content: {
-          type: 'exces-full',
+          type: 'subsections',
           subsections: [
             {
-              id: 'philo',
-              title: "I. L'Excès face à la Modération",
-              type: 'grid',
-              items: [
-                {
-                  title: 'Épicure (341-270 av. J.-C.)',
-                  color: 'purple',
-                  text: [
-                    'Le bonheur = satisfaction des désirs naturels et nécessaires (manger, dormir, amitié).',
-                    'La comm. crée des désirs artificiels (luxe, accumulation) qui mènent à la frustration.',
-                    'La modération est la clé de la vie heureuse.',
-                    "-> L'hyperconsommation promue par la pub est épicuriennement nuisible."
-                  ]
-                },
-                {
-                  title: "L'éthique en communication",
-                  color: 'green',
-                  text: [
-                    'Recherche du juste, du beau et du vrai dans les discours.',
-                    'Une communication éthique valorise la modération et la sollicitude.',
-                    "Elle s'éloigne des discours démagogiques et manipulatoires.",
-                    '-> Le but est de créer une vraie relation de confiance avec la cible.'
-                  ]
-                },
-                {
-                  title: "La Sagesse et l'Architecture",
-                  color: 'blue',
-                  text: [
-                    "L'architecture religieuse magistrale sert à imposer le respect de la croyance par l'excès.",
-                    'Ex. : La Chapelle Sixtine de Michel-Ange, ou la Sagrada Familia.',
-                    '-> La démesure est utilisée comme outil de conviction.'
-                  ]
-                },
-                {
-                  title: 'Le paradoxe publicitaire',
-                  color: 'amber',
-                  text: [
-                    "Les annonceurs utilisent l'excès formel (visuel choc, hyperbole) pour vanter un mode de vie équilibré.",
-                    "Il n'y a pas de contradiction entre recourir à l'excès et prôner la modération.",
-                    "Ex. L'excès est un moyen d'appuyer le discours, mais la finalité du message reste saine."
-                  ]
-                }
-              ]
-            },
-            {
-              id: 'pourquoi',
-              title: "II. Pourquoi les marques ont-elles recours à l'excès ?",
-              type: 'grid',
-              items: [
-                {
-                  title: "Capter l'attention",
-                  color: 'red',
-                  text: [
-                    "Économie de l'attention : chaque marque se bat pour exister dans un espace saturé.",
-                    "L'excès permet de créer une rupture visuelle ou cognitive."
-                  ]
-                },
-                {
-                  title: 'Figures de style',
-                  color: 'blue',
-                  text: [
-                    'Les communicateurs utilisent des procédés rhétoriques : amplification, exagération, hyperbole, répétition.',
-                    'Le but est de marquer les esprits par une expressivité accrue.'
-                  ]
-                },
-                {
-                  title: 'Faire rêver',
-                  color: 'amber',
-                  text: [
-                    'La mise en scène de la démesure (dorures, environnements grandioses).',
-                    "Marques de luxe : utiliser l'excès pour créer l'illusion et rapprocher le produit du divin."
-                  ]
-                }
-              ]
-            },
-            {
-              id: 'campagnes',
-              title: 'III. Campagnes de com emblématiques',
-              type: 'cases',
-              items: [
-                {
-                  brand: "DIOR × RIHANNA (J'ADORE) — 2024",
-                  title: "L'excès divin et l'esthétique de l'or",
-                  body: [
-                    "1. La mise en scène historique : Le produit est mis en scène dans un environnement historique magistral (le château de Versailles). Le montage alterne des gros plans (sur les vêtements et accessoires), des travellings, des plans moyens montrant Rihanna, et des plans généraux sur le somptueux décor.",
-                    "2. Le symbolisme des couleurs : Le spot est dominé par des couleurs chaudes et dorées, en lien direct avec la paronomase (Dior / J'adore / Or). Il crée une analogie entre le parfum et l'or (le parfum est littéralement montré dans un coffre-fort).",
-                    "3. Rêve, illusion et sacré : La campagne établit un rapprochement fort entre le rêve et l'illusion. On y trouve une référence au Christ avec la scène de l'eau, puis l'apparition de Rihanna dans un encadrement illuminé. C'est une véritable apparition divine, traitée de manière sculpturale."
-                  ],
-                  tags: ['Luxe', 'Hyperbole visuelle', 'Références divines', "L'or"],
-                  color: 'purple'
-                },
-                {
-                  brand: 'JUST EAT — 2018 / 2019',
-                  title: 'Le décalage temporel et la promesse absurde',
-                  body: [
-                    "La publicité joue sur un contraste temporel très fort : le spot se déroule à une époque ancienne, mais promet un service de livraison ultra-rapide en 2 secondes.",
-                    "Cette promesse est délibérément absurde et trop exagérée. L'hyperbole temporelle ne cherche pas à être crédible de manière littérale, mais à marquer les esprits par l'humour absurde pour souligner la véritable force du service : sa rapidité."
-                  ],
-                  tags: ['Hyperbole', 'Humour absurde', 'Promesse exagérée', 'Mémorisation'],
-                  color: 'amber'
-                },
-                {
-                  brand: 'AGENCE BABEL ("FULLWASHING") — AVRIL 2021',
-                  title: "La parodie pour dénoncer l'excès de mensonges",
-                  body: [
-                    "L'Agence Babel parodie les annonceurs qui mentent sur leurs images (via le greenwashing, pinkwashing, ou womanwashing).",
-                    "Dans ce spot vidéo, ils inventent la fausse lessive \"Fullwashing\", présentée comme \"le premier discours de marque qui lave tout en 1\". C'est une campagne parodique (à visée humoristique et dénonciatrice) qui pointe du doigt les discours démagogiques des annonceurs. L'agence encourage ainsi une consommation et une communication responsables et mesurées."
-                  ],
-                  tags: ['Parodie', 'Dénonciation', 'Washing', 'Humour'],
-                  color: 'teal'
-                },
-                {
-                  brand: 'INTERFEL / FRUITS & LÉGUMES FRAIS — "JAMAIS TROP" (JUIN 2015 / AVRIL 2025)',
-                  title: "Valoriser l'excès pour promouvoir la nature",
-                  body: [
-                    "La campagne utilise des images en accéléré qui produisent un effet d'accélération du temps. La succession extrêmement rapide de gros plans avec des mouvements de caméra rapides (travelling, panoramiques) crée un effet immersif et de vitesse.",
-                    "La musique choisie est \"Just can't get enough\" de Depeche Mode, ce qui fait directement écho au slogan \"Jamais trop\". La campagne présente une esthétique très chargée et excentrique (décors, costumes et accessoires colorés façon années 70). La succession de séquences se conclut par la répétition du slogan, créant un effet cumulatif. L'excès formel est utilisé pour prouver qu'avec un produit sain, l'excès est positif."
-                  ],
-                  tags: ['Contre-pied', 'Répétition / Accumulation', 'Vitesse', 'Excès positif'],
-                  color: 'green'
-                }
-              ]
-            },
-            {
-              id: 'cas',
-              title: "IV. Études de cas (Les types d'excès)",
+              id: 'plan-exces',
+              title: "Plan de la séance",
               type: 'list',
               items: [
                 {
-                  title: '1. Le Shockvertising — Choquer pour alerter',
-                  text: [
-                    "Utiliser un choc émotionnel (image violente, injure) pour forcer une prise de conscience, souvent en prévention sanitaire ou routière.",
-                    "Campagne étudiée : Ligue contre le Cancer (\"Va chier\")",
-                    "Recours direct à l'injure au sens propre. L'impératif sert à exprimer un ordre, un conseil, voire une prière. C'est une manière de dépasser le tabou (le cancer colorectal, les toilettes) pour donner au dépistage un caractère plus sérieux et provoquer une réaction."
-                  ]
+                  title: "1. L'excès et la modération",
+                  text: ["(Contenu restreint à la demande de l'enseignante)"]
                 },
                 {
-                  title: '2. La Transgression — Repousser les limites',
-                  text: [
-                    "L'excès peut passer par des thématiques transgressives (l'intimité, le scatologique) pour paraître crédible et extraordinaire.",
-                    "Référence étudiée : Gargantua de Rabelais",
-                    "Dans Gargantua, les personnages sont des géants, ce qui permet un effet grossissant permanent. Rabelais utilise des sujets transgressifs et scatologiques, et l'onomastique (le jeu sur les noms comme Grandgousier) programme les appétits excessifs. Ce gigantisme et cet extra-ordinaire renforcent paradoxalement le côté crédible du récit."
-                  ]
+                  title: "2. L'excès et la parodie",
+                  text: ["(Contenu restreint à la demande de l'enseignante)"]
                 },
                 {
-                  title: "3. La Parodie — Dénoncer par l'exagération",
-                  text: [
-                    "La parodie est une façon d'exagérer les traits et les défauts de manière excessive pour imiter une œuvre ou un comportement. Elle a une visée humoristique et comparative (dénonciation de l'hypocrisie des marques, comme dans la campagne Wero ou Agence Babel)."
-                  ]
-                }
-              ]
-            },
-            {
-              id: 'risques',
-              title: "V. Risques et limites de l'excès",
-              type: 'grid',
-              items: [
-                {
-                  title: 'Tension et Malaise',
-                  color: 'red',
-                  text: [
-                    "Un recours trop fort à l'excès peut créer une véritable tension et faire peur.",
-                    "Il peut être associé à l'idée de débauche ou de surconsommation.",
-                    "L'outrance peut être poussée jusqu'au dégoût (limite du shockvertising)."
-                  ]
-                },
-                {
-                  title: 'Questionnement moral',
-                  color: 'amber',
-                  text: [
-                    "L'excès ne va pas forcément de pair avec la frugalité, l'équilibre et la mesure, pourtant attendus par les aspirations actuelles de la société.",
-                    "Pour Montaigne, la vertu lorsqu'elle est appliquée avec excès se trouve corrompue et dénaturée."
-                  ]
-                },
-                {
-                  title: 'Le mauvais goût',
-                  color: 'purple',
-                  text: [
-                    "Jusqu'où peut-on aller ? L'excès pose la question de la frontière entre le bon goût et le grotesque.",
-                    "Le luxe ostentatoire des \"nouveaux riches\" (ex. Gatsby le Magnifique) montre que l'excès n'est pas forcément du côté du raffinement."
-                  ]
+                  title: "3. Une esthétique de l'excès ?",
+                  text: ["(Contenu restreint à la demande de l'enseignante)"]
                 }
               ]
             }
